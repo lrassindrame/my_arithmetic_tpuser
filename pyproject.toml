@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "my-arithmetic-tpuser"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[tool.poetry.group.dev.dependencies]
+poetry-dynamic-versioning = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.tox]
+envlist = ["py3.10"]
+
+[tool.poetry-dynamic-versioning]
+version-file = "my_arithmetic_tpuser/__init__.py"
+pre-release = "alpha"
