@@ -1,0 +1,22 @@
+name: GitlabSync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Git Repo Sync
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Sync with GitLab
+        uses: wangchucheng/git-repo-sync@v0.1.0
+        with:
+          target-url: ${{ https://gitlab.univ-lr.fr/lrassind/my-arithmetic-tpuser.git }}
+          target-username: ${{ lrassindrame }}
+          target-token: ${{ glpat-MsUVHpwpxztqnZsjDdbP }}
